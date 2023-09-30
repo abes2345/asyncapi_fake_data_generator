@@ -1,0 +1,74 @@
+---
+components:
+  schemas: {}
+  messages:
+    Equipment Failed:
+      x-ep-event-id: "qs665ujwz9q"
+      x-ep-event-version-displayname: "0.1.0"
+      x-ep-event-version-id: "jhdn1lcmumc"
+      x-ep-event-version: "0.1.0"
+      x-ep-event-name: "Equipment Failed"
+      description: "* MES system publishes \"Equipment failure\" event when equipment\
+        \ failure is detected.\n* Predictive maintenance system subscribes to \"Equipment\
+        \ failure\" event to initiate predictive maintenance algorithms.\n* HMI system\
+        \ subscribes to \"Equipment failure\" event to monitor equipment status and\
+        \ maintenance activities."
+      x-ep-event-state-id: "1"
+      x-ep-event-state-name: "DRAFT"
+    Maintenance schedule updated:
+      x-ep-event-id: "37ejgoytj6f"
+      x-ep-event-version-displayname: ""
+      x-ep-event-version-id: "c40qp2xh0gh"
+      x-ep-event-version: "0.1.0"
+      x-ep-event-name: "Maintenance schedule updated"
+      description: "* PMS publishes the \"Maintenance schedule updated\" event to\
+        \ initiate maintenance schedule changes.\n* MES system subscribes to \"Maintenance\
+        \ schedule updated\" event to adjust production scheduling and avoid downtime."
+      x-ep-event-state-id: "1"
+      x-ep-event-state-name: "DRAFT"
+channels:
+  acmeManufacturing/sc/equipment/failed/v1/mes/{equipmentID}:
+    subscribe:
+      message:
+        $ref: "#/components/messages/Equipment Failed"
+    publish:
+      message:
+        $ref: "#/components/messages/Equipment Failed"
+    parameters:
+      equipmentID:
+        schema:
+          type: "string"
+        x-ep-parameter-name: "equipmentID"
+  acmeManufacturing/sc/equipment/maintenance/schedule/updated/v1/pms/{equipmentID}:
+    subscribe:
+      message:
+        $ref: "#/components/messages/Maintenance schedule updated"
+    publish:
+      message:
+        $ref: "#/components/messages/Maintenance schedule updated"
+    parameters:
+      equipmentID:
+        schema:
+          type: "string"
+        x-ep-parameter-name: "equipmentID"
+asyncapi: "2.5.0"
+info:
+  x-ep-event-api-version: "0.1.0"
+  x-ep-event-api-id: "cebh5cgxz1k"
+  description: "This Event API involves the MES system to detect equipment failures,\
+    \ the predictive maintenance system to initiate predictive maintenance algorithms,\
+    \ and the HMI system to monitor equipment status and maintenance activities.\n\
+    \n* MES system publishes \"Equipment failure\" event when equipment failure is\
+    \ detected.\n* Predictive maintenance system subscribes to \"Equipment failure\"\
+    \ event to initiate predictive maintenance algorithms.\n* MES system subscribes\
+    \ to \"Maintenance schedule updated\" event to adjust production scheduling and\
+    \ avoid downtime.\n* HMI system subscribes to \"Equipment failure\" event to monitor\
+    \ equipment status and maintenance activities."
+  x-ep-displayname: "0.1.0"
+  x-ep-state-name: "DRAFT"
+  title: "Maintenance and Repair Event API"
+  x-ep-application-domain-id: "06jf5fwrcrf"
+  version: "0.1.0"
+  x-ep-state-id: "1"
+  x-ep-event-api-version-id: "m07jqdprfqu"
+  x-ep-application-domain-name: "Acme Manufacturing - Supply Chain Optimisation"

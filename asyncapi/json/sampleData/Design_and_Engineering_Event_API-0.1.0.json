@@ -1,0 +1,40 @@
+{
+  "Engineering Complete": {
+    "eventId": "deserunt",
+    "productId": "nulla",
+    "completionDate": "1965-05-17T03:44:15.0Z",
+    "completedBy": "ut minim"
+  },
+  "Product Model Complete": {
+    "eventId": "dolore non aliqua qui",
+    "productId": "deserunt occaecat magna cillum dolore",
+    "completionDate": "1943-08-30T15:18:10.0Z",
+    "completedBy": "dolor amet sed"
+  },
+  "Product Model Created": {
+    "eventId": "sint magna Ut",
+    "productId": "voluptate",
+    "createdBy": "sint deserunt",
+    "creationDate": "1899-12-25T23:28:09.0Z",
+    "productType": "in esse commodo dolor"
+  },
+  "Product Model Modified": {
+    "eventId": "Duis consectetur",
+    "productId": "enim ipsum aliquip",
+    "modifiedFields": [
+      "anim magna enim Duis",
+      "non consequat fugiat Excepteur",
+      "ea sit cupidatat deserunt Excepteur",
+      "qui",
+      "ea laborum nostrud et"
+    ]
+  },
+  "Product Model Approved": {
+    "eventId": "exercitation ea eu",
+    "designApproved": true,
+    "designFileUrl": "in ea",
+    "productName": "amet qui",
+    "productType": "enim labore deserunt exercitation fugiat",
+    "designerName": "fugiat"
+  }
+}

@@ -1,0 +1,41 @@
+2023-06-27 11:31:38.141  INFO 62332 --- [pool-8-thread-1] c.s.s.c.s.b.u.SolaceErrorMessageHandler  : Processing message 9266b100-3ecb-a71b-1320-4e813cb8b1c7 <failed-message: 5fdb6758-30d7-05d0-da58-d886d65f8563, source-message: 480299, >
+2023-06-27 11:31:38.141  INFO 62332 --- [pool-8-thread-1] backFactory$JCSMPAcknowledgementCallback : Cannot REQUEUE XMLMessage 480299 since this flow is bound to a temporary queue, failed message will be discarded
+2023-06-27 11:31:38.161  WARN 62332 --- [pool-6-thread-1] s.b.i.RetryableInboundXMLMessageListener : Failed to consume a message from destination #P2P/QTMP/v:primary/scst/an/5094cf84-180e-4522-8b2e-b9616c7e02d0/plain/acmeManufacturing/sc/product/engineering/complete/v1/plm/_ - attempt 1
+2023-06-27 11:31:39.167  WARN 62332 --- [pool-6-thread-1] s.b.i.RetryableInboundXMLMessageListener : Failed to consume a message from destination #P2P/QTMP/v:primary/scst/an/5094cf84-180e-4522-8b2e-b9616c7e02d0/plain/acmeManufacturing/sc/product/engineering/complete/v1/plm/_ - attempt 2
+2023-06-27 11:31:39.174  WARN 62332 --- [pool-7-thread-1] s.b.i.RetryableInboundXMLMessageListener : Failed to consume a message from destination #P2P/QTMP/v:primary/scst/an/4071574f-46d5-49ce-a2e8-39466815c5e8/plain/acmeManufacturing/sc/product/model/complete/v1/cad/_ - attempt 1
+2023-06-27 11:31:40.112  WARN 62332 --- [pool-5-thread-1] s.b.i.RetryableInboundXMLMessageListener : Failed to consume a message from destination #P2P/QTMP/v:primary/scst/an/80b5c178-1bf6-49bf-ab55-dc121afde262/plain/acmeManufacturing/sc/product/model/modified/v1/cad/_ - attempt 3
+2023-06-27 11:31:40.112 ERROR 62332 --- [pool-5-thread-1] o.s.integration.handler.LoggingHandler   : org.springframework.messaging.MessageHandlingException: error occurred in message handler [org.springframework.cloud.stream.function.FunctionConfiguration$FunctionToDestinationBinder$1@2ce6167b]; nested exception is java.lang.ClassCastException: [B cannot be cast to acme.manufacturing.designandengineering.ProductModelModified, failedMessage=GenericMessage [payload=byte[15], headers={solace_expiration=0, deliveryAttempt=3, solace_destination=acmeManufacturing/sc/product/model/modified/v1/cad/{productModelID}, solace_timeToLive=0, solace_receiveTimestamp=0, acknowledgmentCallback=com.solace.spring.cloud.stream.binder.util.JCSMPAcknowledgementCallbackFactory$JCSMPAcknowledgementCallback@57d9f913, solace_discardIndication=false, solace_dmqEligible=false, solace_priority=-1, solace_redelivered=false, id=66e7b50f-fe4c-da90-136a-789e9637dd7f, contentType=application/json, timestamp=1687836697099}]
+        at org.springframework.integration.support.utils.IntegrationUtils.wrapInHandlingExceptionIfNecessary(IntegrationUtils.java:192)
+        at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:65)
+        at org.springframework.integration.dispatcher.AbstractDispatcher.tryOptimizedDispatch(AbstractDispatcher.java:115)
+        at org.springframework.integration.dispatcher.UnicastingDispatcher.doDispatch(UnicastingDispatcher.java:133)
+        at org.springframework.integration.dispatcher.UnicastingDispatcher.dispatch(UnicastingDispatcher.java:106)
+        at org.springframework.integration.channel.AbstractSubscribableChannel.doSend(AbstractSubscribableChannel.java:72)
+        at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:317)
+        at org.springframework.integration.channel.AbstractMessageChannel.send(AbstractMessageChannel.java:272)
+        at org.springframework.messaging.core.GenericMessagingTemplate.doSend(GenericMessagingTemplate.java:187)
+        at org.springframework.messaging.core.GenericMessagingTemplate.doSend(GenericMessagingTemplate.java:166)
+        at org.springframework.messaging.core.GenericMessagingTemplate.doSend(GenericMessagingTemplate.java:47)
+        at org.springframework.messaging.core.AbstractMessageSendingTemplate.send(AbstractMessageSendingTemplate.java:109)
+        at org.springframework.integration.endpoint.MessageProducerSupport.sendMessage(MessageProducerSupport.java:208)
+        at com.solace.spring.cloud.stream.binder.inbound.InboundXMLMessageListener.sendToConsumer(InboundXMLMessageListener.java:150)
+        at com.solace.spring.cloud.stream.binder.inbound.RetryableInboundXMLMessageListener.lambda$handleMessage$13(RetryableInboundXMLMessageListener.java:61)
+        at org.springframework.retry.support.RetryTemplate.doExecute(RetryTemplate.java:329)
+        at org.springframework.retry.support.RetryTemplate.execute(RetryTemplate.java:225)
+        at com.solace.spring.cloud.stream.binder.inbound.RetryableInboundXMLMessageListener.handleMessage(RetryableInboundXMLMessageListener.java:60)
+        at com.solace.spring.cloud.stream.binder.inbound.InboundXMLMessageListener.receive(InboundXMLMessageListener.java:113)
+        at com.solace.spring.cloud.stream.binder.inbound.InboundXMLMessageListener.run(InboundXMLMessageListener.java:73)
+        at java.util.concurrent.Executors$RunnableAdapter.call(Unknown Source)
+        at java.util.concurrent.FutureTask.run(Unknown Source)
+        at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+        at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+        at java.lang.Thread.run(Unknown Source)
+Caused by: java.lang.ClassCastException: [B cannot be cast to acme.manufacturing.designandengineering.ProductModelModified
+        at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.invokeConsumer(SimpleFunctionRegistry.java:854)
+        at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.doApply(SimpleFunctionRegistry.java:643)
+        at org.springframework.cloud.function.context.catalog.SimpleFunctionRegistry$FunctionInvocationWrapper.apply(SimpleFunctionRegistry.java:489)
+        at org.springframework.cloud.stream.function.PartitionAwareFunctionWrapper.apply(PartitionAwareFunctionWrapper.java:77)
+        at org.springframework.cloud.stream.function.FunctionConfiguration$FunctionWrapper.apply(FunctionConfiguration.java:727)
+        at org.springframework.cloud.stream.function.FunctionConfiguration$FunctionToDestinationBinder$1.handleMessageInternal(FunctionConfiguration.java:560)
+        at org.springframework.integration.handler.AbstractMessageHandler.handleMessage(AbstractMessageHandler.java:56)
+        ... 23 more

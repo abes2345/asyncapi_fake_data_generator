@@ -1,0 +1,57 @@
+ag -p dynamicType=streamBridge -p binder=solace -p artifactId=InventoryManagementAndTracking -p groupId=acme.manufacturing -p javaPackage=acme.manufacturing.inventorymanagementandtracking -p solaceSpringCloudVersion=1.0.0 -p springCloudStreamVersion=Horsham.SR3 -p springCloudVersion=Hoxton.SR3 "Inventory Management and Tracking Event API-0.1.0.yaml" @asyncapi/java-spring-cloud-stream-template
+
+
+C:\Users\hyper\OneDrive - Solace Corporation\Demos\Supply Chain\Manufacturing\Data Generator\asyncapi\yaml>ag -p binder=solace -p artifactId=InventoryManagementAndTracking -p groupId=acme.manufacturing -p javaPackage=acme.manufacturing.inventorymanagementandtracking -p solaceSpringCloudVersion=1.0.0 -p springCloudStreamVersion=Horsham.SR3 -p springCloudVersion=Hoxton.SR3 "Inventory Management and Tracking Event API-0.1.0.yaml" @asyncapi/java-spring-cloud-stream-template
+Something went wrong:
+Error: Input is not a corrent AsyncAPI document so it cannot be processed.
+    at Generator.generateFromString (C:\Users\hyper\AppData\Roaming\npm\node_modules\@asyncapi\generator\lib\generator.js:264:19)
+    at async C:\Users\hyper\AppData\Roaming\npm\node_modules\@asyncapi\generator\cli.js:157:9
+Errors:
+[
+  {
+    "code": "asyncapi-document-unresolved",
+    "message": "Referencing in this place is not allowed",
+    "path": [
+      "channels",
+      "acmeManufacturing/sc/inventory/level/changed/v1/erp/{productID}",
+      "subscribe",
+      "message"
+    ],
+    "severity": 0,
+    "source": "c:/Users/hyper/OneDrive - Solace Corporation/Demos/Supply Chain/Manufacturing/Data Generator/asyncapi/yaml/Inventory Management and Tracking Event API-0.1.0.yaml",
+    "range": {
+      "start": {
+        "line": 51,
+        "character": 14
+      },
+      "end": {
+        "line": 52,
+        "character": 61
+      }
+    }
+  },
+  {
+    "code": "asyncapi-document-unresolved",
+    "message": "Referencing in this place is not allowed",
+    "path": [
+      "channels",
+      "acmeManufacturing/sc/inventory/level/changed/v1/erp/{productID}",
+      "publish",
+      "message"
+    ],
+    "severity": 0,
+    "source": "c:/Users/hyper/OneDrive - Solace Corporation/Demos/Supply Chain/Manufacturing/Data Generator/asyncapi/yaml/Inventory Management and Tracking Event API-0.1.0.yaml",
+    "range": {
+      "start": {
+        "line": 54,
+        "character": 14
+      },
+      "end": {
+        "line": 55,
+        "character": 61
+      }
+    }
+  }
+]
+
+C:\Users\hyper\OneDrive - Solace Corporation\Demos\Supply Chain\Manufacturing\Data Generator\asyncapi\yaml>

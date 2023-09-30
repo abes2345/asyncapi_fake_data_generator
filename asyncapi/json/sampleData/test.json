@@ -1,0 +1,40 @@
+{
+  "Engineering Complete": {
+    "eventId": "aliquip ullamco",
+    "productId": "et Excepteur labore in",
+    "completedBy": "dolor aliqua non ea consequat",
+    "completionDate": "1991-12-11T03:39:32.0Z"
+  },
+  "Product Model Complete": {
+    "eventId": "nisi est esse tempor occaecat",
+    "productId": "in incididunt in labore nulla",
+    "completedBy": "labore",
+    "completionDate": "1957-08-06T17:54:03.0Z"
+  },
+  "Product Model Created": {
+    "eventId": "aliquip deserunt",
+    "productId": "ex dolore Excepteur Lorem",
+    "productType": "consectetur dolore qui Ut enim",
+    "createdBy": "cillum",
+    "creationDate": "1947-05-04T22:57:34.0Z"
+  },
+  "Product Model Modified": {
+    "eventId": "sunt fugiat sint cupidatat magna",
+    "productId": "anim",
+    "modifiedFields": [
+      "commodo fugiat nisi dolore",
+      "quis",
+      "tempor pariatur",
+      "ad aliqua eu",
+      "est"
+    ]
+  },
+  "Product Model Approved": {
+    "eventId": "magna eu laborum nostrud",
+    "productName": "magna sit officia ut enim",
+    "productType": "sunt non",
+    "designFileUrl": "labore dolore voluptate fugiat",
+    "designerName": "cupidatat est cillum laborum",
+    "designApproved": true
+  }
+}
